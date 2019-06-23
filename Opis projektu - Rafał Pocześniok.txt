@@ -1,0 +1,17 @@
+Dobry wieczór Panie Doktorze,
+w repozytorium umieœci³em mój projekt. Jest nim strona z moim portfolio (z baz¹ danych i nie tylko). Strona jest resposywna. Dzia³a tak¿e walidacja.
+
+Ja uruchamiam w Xamppie.
+
+login do strony: Rafal
+has³o: Rafal12345
+
+Po zalogowaniu mo¿na w zak³adce Oferta - dodawaæ i usuwaæ oferty z cen¹.
+Mo¿na tak¿e wysy³aæ do mnie wiadomoœci poprzez formularz kontaktowy.
+
+Pozdrawiam
+Rafa³ Poczeœniok
+II inf ns
+s96355
+
+

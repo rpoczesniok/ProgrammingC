@@ -1,0 +1,651 @@
+@keyframes animS {
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes animB {
+    50% {
+        top: 45%;
+        transform: translate(-50%, 0) rotate(0deg)
+    }
+
+    100% {
+        top: 45%;
+        transform: translate(-50%, 0) rotate(-45deg)
+    }
+}
+
+@keyframes animA {
+    50% {
+        top: 45%;
+        transform: translate(-50%, 0) rotate(0deg)
+    }
+
+    100% {
+        top: 45%;
+        transform: translate(-50%, 0) rotate(45deg)
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    background: #b5cce7;
+    overflow-x: hidden
+}
+
+header {
+    background: #1b6ac5;
+    /* width: 100vw; */
+    width: 100%;
+    height: 7rem;
+    padding-top: 0.5rem;
+    position: relative;
+}
+
+#header-nazwa {
+    display: flex;
+    width: 45rem;
+    height: 4rem;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 0.5rem;
+}
+
+#header-nazwa h1 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.5rem;
+    width: 40rem;
+}
+
+#header-nazwa img {
+    border-radius: 50%;
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.menu {
+    border: solid 1px #2C353E;
+    width: 3rem;
+    height: 2.5rem;
+    position: absolute;
+    left: 1rem;
+    top: 0.8rem;
+    display: flex;
+    background: #1b6ac5;
+    opacity: 0;
+}
+
+.menu-btn {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    position: absolute;
+    z-index: 1000;
+    cursor: pointer;
+    outline: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    display: flex;
+    /* filter: drop-shadow(0px 0px 1px #fff) drop-shadow(0px 0px 1px #fff); */
+}
+
+.menu-btn span {
+    width: 1.9rem;
+    height: 5px;
+    background: #2C353E;
+    position: absolute;
+    display: block;
+    border-radius: 15%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: background, 0.5s;
+}
+
+.menu:hover span {
+    background: rgb(86, 101, 116);
+    border: solid 1px rgb(86, 101, 116);
+}
+
+.menu-btn span:nth-child(1) {
+    top: 25%;
+}
+
+.menu-btn span:nth-child(3) {
+    top: 75%;
+}
+
+.menu-btn.anim span:nth-child(2) {
+    animation: animS 0.2s 0s 1 forwards;
+}
+
+.menu-btn.anim span:nth-child(1) {
+    animation: animB 0.2s 0s 1 forwards;
+}
+
+.menu-btn.anim span:nth-child(3) {
+    animation: animA 0.2s 0s 1 forwards;
+}
+
+.nav {
+    width: 50rem;
+    height: 2.5rem;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+}
+
+.nav .nav-element {
+    list-style: none;
+    width: 16.66%;
+    height: 2.5rem;
+}
+
+.nav .nav-element a {
+    display: block;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.3rem;
+    transition-property: color, background;
+    transition-duration: 0.5s;
+    height: 100%;
+    text-align: center;
+    padding-top: 0.5rem;
+}
+
+.nav .nav-element:hover a {
+    color: #000000;
+    /* background: #b5cce7; */
+    border-style: solid solid none solid;
+    border-width: 2px;
+    border-color: #b5cce7;
+    padding-top: 0.38rem;
+}
+
+#artykul {
+    width: calc(100% - 2rem);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    font-family: 'Roboto Mono', monospace;
+    margin: 1rem 1rem 1rem 1rem;
+}
+
+#artykul .artykul {
+    border: solid 1px #1b6ac5;
+    width: calc(100% - 16rem);
+}
+
+#artykul .artykul-naglowek {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding-top: 0.5rem;
+}
+
+#artykul .artykul-tresc {
+    padding: 0.7rem;
+    font-size: 1rem;
+    overflow: hidden;
+    text-align: justify;
+}
+
+.logo {
+    width: 15rem;
+}
+
+.logo img {
+    width: 100%
+}
+
+table {
+    border-collapse: collapse;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.8rem;
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #1b6ac5;
+}
+
+td,
+th {
+    text-align: left;
+    padding: 8px;
+}
+
+tr.naglowek {
+    background-color: rgb(158, 158, 158);
+}
+
+tr:nth-child(even) {
+    background-color: #ccdcee88;
+}
+
+tr.typZgloszenia {
+    background-color: rgb(218, 217, 217);
+}
+
+.formularzPole {
+    font: inherit;
+    border: solid 1px #1b6ac5;
+    border-radius: 3px;
+    margin: 3px 0 0px 0;
+    padding: 3px 0;
+    width: 18.75rem;
+}
+
+textarea.formularzPole {
+    height: 70px
+}
+
+#popup-przyciskWyslij,
+#przyciskWyslij {
+    cursor: pointer;
+    border: solid 1px #1b6ac5;
+    border-radius: 3px;
+    line-height: 32px;
+    padding: 0 25px;
+    font-size: 0.8rem;
+    font-family: inherit;
+    background: #ccc;
+    background: linear-gradient(#ddd 0, #eee 100%);
+    margin-top: 10px;
+}
+
+fieldset {
+    margin-top: 0.5rem;
+    border: solid 1px #1b6ac5;
+    padding: 0.5rem;
+    width: 19rem;
+}
+
+address {
+    font-style: normal;
+}
+
+#popup label,
+#formularz-kontaktowy label {
+    display: block;
+    margin-top: 10px;
+}
+
+.error {
+    color: #DB083E;
+}
+
+.error input[type=text],
+.error input[type="email"],
+.error input[type="number"],
+.error textarea {
+    color: #DB083E;
+    border-color: #DB083E;
+    background: #FFEDED url(field-error.png) no-repeat;
+    background-position: calc(100% - 10px) center;
+    padding-right: 40px;
+}
+
+.error textarea {
+    background-position: calc(100% - 10px) 10px;
+}
+
+.error-tresc {
+    color: #DB083E;
+    padding: 0.5rem 0;
+    font-size: 0.8rem;
+}
+
+.header-logowanie .error-tresc {
+    background: #DB083E;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+    padding: 0.5rem;
+    border-top: solid 0.5rem #1b6ac5;
+}
+
+.header-logowanie-ctn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 8rem;
+}
+
+.header-logowanie-ctn.zalogowany {
+    width: 9.5rem;
+
+}
+
+.header-logowanie-ctn a {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+    text-decoration: none;
+    width: 100%;
+    height: 2.5rem;
+    left: 0;
+    top: 0;
+}
+
+.header-logowanie-icon {
+    position: relative;
+    height: 100%;
+    width: 2.5rem;
+    text-align: center;
+    padding: 0;
+}
+
+.header-logowanie-icon i {
+    position: absolute;
+    font-size: 2rem;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.header-logowanie-txt {
+    position: relative;
+    width: calc(100% - 2.5rem);
+}
+
+.header-logowanie-txt span {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.1rem;
+}
+
+.header-logowanie-ctn a:hover {
+    color: #2C353E;
+}
+
+.header-logowanie {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    padding: 0.5rem;
+    background: #1b6ac5;
+    border: solid 2px #1b6ac5;
+    width: 15rem;
+    height: auto;
+    border-top: solid 1px #b5cce7;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.header-logowanie.show {
+    opacity: 1;
+}
+
+.header-logowanie .logowanie-wiersz {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 1px #d9dfe6;
+    width: 100%;
+    height: 3.12rem;
+    padding: 1px;
+
+}
+
+.header-logowanie .logowanie-wiersz label {
+    position: relative;
+    width: 2.5rem;
+    height: 100%;
+}
+
+.header-logowanie .logowanie-wiersz label i {
+    position: absolute;
+    font-size: 2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.header-logowanie .logowanie-wiersz input {
+    width: calc(100% - 2.5rem);
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.1rem;
+    background: #b5cce7;
+    outline: none;
+}
+
+.header-logowanie .logowanie-wiersz button {
+    margin: 0.4rem;
+    width: 100%;
+    border: solid 1px #1b6ac5;
+    background: #a4c0e0;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.header-logowanie .logowanie-wiersz button:hover {
+    box-shadow: 0.5px 0.5px #1b6ac5;
+}
+
+.header-logowanie form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    background: #b5cce7
+}
+
+.header-menu {
+    border-top: solid 1px #a4c0e0;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: 16rem;
+    background: #1b6ac5;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.header-menu.show {
+    opacity: 1;
+}
+
+.header-menu .menu-wiersz {
+    position: relative;
+    width: 100%;
+    height: 3rem;
+}
+
+.header-menu .menu-wiersz a {
+    border-bottom: solid 1px #a4c0e0;
+    position: static;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.1rem;
+}
+
+buttons {
+    display: flex;
+    justify-content: center;
+
+}
+
+.buttons button {
+    border: none;
+    background: transparent;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+button.delete {
+    color: red;
+}
+
+button.add {
+    color: #1b6ac5;
+}
+
+tr:hover .buttons button {
+    opacity: 1;
+}
+
+#popup {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: #0000008f;
+    z-index: 100;
+    font-family: 'Roboto Mono', monospace;
+    left: 0;
+    top: 0;
+}
+
+#popup form {
+    position: absolute;
+    width: 20rem;
+    background: #ffffff;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0.5rem
+}
+
+#popup input,
+#popup select {
+    width: 100%;
+}
+
+#popup input[type="checkbox"] {
+    width: auto;
+}
+
+@media (max-width: 60rem) {
+    #header-nazwa {
+        width: 35rem;
+    }
+
+    #header-nazwa h1 {
+        width: 30rem;
+    }
+
+    header {
+        height: 10rem;
+    }
+
+    .nav {
+        width: 100%;
+        flex-wrap: wrap;
+        height: 5rem;
+    }
+
+    .nav .nav-element {
+        width: 33.33%;
+    }
+
+    .nav .nav-element:hover a {
+        border: solid 2px #b5cce7;
+    }
+
+    fieldset {
+        width: 100%;
+    }
+
+    .formularzPole {
+        width: 100%;
+    }
+}
+
+@media (max-width: 35rem) {
+    #header-nazwa {
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+        border-bottom: solid 1px #b5cce7;
+        justify-content: flex-start;
+        padding: 0;
+    }
+
+    #header-nazwa img {
+        margin-right: 0.7rem;
+        margin-left: 0.5rem;
+    }
+
+    header {
+        height: 4.1rem;
+    }
+
+    #header-nazwa h1 {
+        font-size: 1rem;
+        width: 15rem;
+    }
+
+    #header-nazwa img {
+        margin-left: 5rem;
+        width: 3rem;
+        height: 3rem;
+    }
+
+    nav {
+        position: absolute;
+        width: 100%;
+        left: -100%;
+        transition-property: left, background;
+        transition-duration: 0.5s;
+    }
+
+    nav.anim {
+        left: 0;
+        background: #1b6ac5
+    }
+
+    .nav {
+        width: 100%;
+        flex-wrap: wrap;
+        height: 15rem;
+    }
+
+    .nav .nav-element {
+        width: 100%;
+    }
+
+    #artykul {
+        flex-wrap: wrap;
+    }
+
+    #artykul .artykul {
+        width: 100%;
+    }
+
+    .logo {
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    #formularz-kontaktowy {
+        width: 100%;
+    }
+
+    fieldset {
+        width: 100%;
+    }
+
+    .formularzPole {
+        width: 100%;
+    }
+
+    .menu {
+        opacity: 1;
+    }
+
+    #artykul .artykul-tresc {
+        overflow-x: scroll;
+    }
+}
